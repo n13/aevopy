@@ -27,7 +27,7 @@ def get_markets(asset: str = "", type=""):
     if asset:
         request_url += f"?asset={asset}"
     if type:
-        request_url += f"&type={type}"
+        request_url += f"&instrument_type={type}"
 
     response = requests.get(request_url, headers=headers).json()
     #TODO: fix types here, we can use typehooks or post_init, but the API should return an int for instrument_id
